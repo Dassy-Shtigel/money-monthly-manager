@@ -1,0 +1,90 @@
+
+.Header {
+    position: fixed;
+    top: 0;
+    background-color: rgba(128, 120, 112, 0.842);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: column;   
+}
+
+.Title {
+    color: #ff9100;
+    height: 90px;
+    font-size: 38px;
+    flex: 4;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.Image {
+    height: 70%;
+    flex: 0.3;
+    margin-left: 15px;
+}
+
+.Tab {
+    font-size: larger;
+    font-weight: bold;
+    border-right: 0.02px solid rgb(146, 139, 133);
+    background-color: rgb(105, 103, 98);
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.Tab a{
+    text-decoration: none;
+    color: rgb(66, 65, 63);
+    cursor: pointer;
+}
+
+.Tab a:hover,
+.Tab a:active,
+.Tab a.active{
+    background-color: rgba(175, 161, 147, 0.952);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid #ff9100;
+    color: rgb(66, 65, 63);
+}
+
+.Content{
+    margin-top: 80px; 
+    text-align: center;
+ }
+
+ @media(max-width: 1085px) {
+    .Title{
+        font-size: 30px;
+        flex: 3;
+    }
+ }
+
+ @media (max-width: 650px) {
+    .Header{
+        width: 100%;
+    }
+    
+    .Title{
+        display: none;
+    }
+    .Image {
+        display: none;
+    }
+
+    .Tab{
+        font-size: unset;
+    }
+}

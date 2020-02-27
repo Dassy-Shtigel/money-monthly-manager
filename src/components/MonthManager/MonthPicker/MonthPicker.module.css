@@ -1,0 +1,70 @@
+
+.Month {
+    background-color: #e0e0e0;
+    height: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button {
+    background-color: rgb(105, 103, 98);
+    color: rgb(240, 121, 24);
+    font-size: 50px;
+    margin: 30px;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    box-shadow: 1px 6px 5px #ccc;
+    border-radius: 3px;
+    text-align: center;
+    overflow:hidden ;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    display:inline-block;
+    
+}
+
+.Button:hover {
+    color: rgb(138, 134, 128);
+    background-color: rgb(236, 117, 19);
+    cursor: pointer;
+}
+
+.Label {
+    color: rgb(236, 117, 19);
+    font-size: 30px;
+    background-color: rgb(241, 236, 226);
+    border: none;
+    align-items: center;
+    text-align: center;
+    cursor:pointer;
+    list-style:none;
+    outline: none;
+    align-self: center;
+}
+
+.Label :hover {
+    color: wheat;
+    background-color: rgb(230, 201, 178);
+    cursor: pointer;
+}
+
+@media (max-width: 550px) {
+    .Button{
+        font-size: 25px;
+    } 
+    .Month{
+        height: 110px;
+    }
+}
+
+
+
+
+
+
+
+  

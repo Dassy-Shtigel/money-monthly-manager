@@ -1,0 +1,128 @@
+.IncomeSection {
+    width: 35%;
+    margin: 50px;
+    margin-top: 20px;
+    background-color: rgba(204, 197, 190, 0.137);
+    color: rgb(43, 42, 40);
+}
+
+.IncomeList{
+    margin: 30px auto;
+    width: 70%;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+    border-radius: 3px;
+    color: rgb(43, 42, 40);
+    background-color: rgba(204, 197, 190, 0.137);
+}
+
+.AllList{
+    margin-right: 50px;
+}
+
+.ListTitle {
+    text-align: center;
+    font-style: bold;
+}
+
+.List {
+    text-align: left;
+    line-height: 1.5;
+    list-style: none;
+}
+
+.List:first-letter {
+    text-transform: uppercase;
+  }
+
+.List:hover {
+    background-color: wheat;
+}
+
+.Section {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.Total{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.TotalSum{
+    margin-left: 5px;
+    color: #ff9100;
+    font-weight: bold;
+}
+
+.Balance {
+    height: 90px;
+    width: 100%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.BalanceText {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(66, 65, 63);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 2px;
+}
+
+.MoreButton{
+    border: none;
+    background-color: rgba(204, 204, 204, 0);
+    font-size: 15px;
+    color: #ff9100;
+    margin-bottom: 5px;
+    outline: none;
+}
+
+.MoreButton:hover{
+    cursor: pointer;
+}
+
+.Error{
+    background-color: lightcoral;
+    padding: 5px;
+    font-weight: bold;
+}
+
+@media (min-width: 500px) {
+    .IncomeList{
+        width: 45%;
+    }      
+}
+
+@media(max-width: 500px) {
+    .BalanceText{
+        font-size: 20px;
+        }
+    .Balance{
+        height: 70px;
+    }
+    .Section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .IncomeSection {
+        width: 90%;
+        margin: 15px;
+        margin-bottom: 20px;
+    }
+        
+}
+
+
+    

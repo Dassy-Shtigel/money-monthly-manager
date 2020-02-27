@@ -1,0 +1,89 @@
+.IncomeInputForm {
+    width: 45%;
+    margin: 2rem auto;
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(119, 115, 113, 0.11);
+  }
+  
+  
+
+  .input {
+    align-items: stretch;
+    justify-content: space-between;
+    display: block;
+    margin: 1rem auto;
+    width:60%;
+    background-color: rgba(116, 113, 112, 0);
+    border: 0px solid rgb(88, 86, 83);
+    border-bottom: 2px solid rgb(22, 21, 20);
+    border-radius: 3px;
+    outline: none;
+    padding-left: 5px;
+  }
+
+  
+  .Button {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff910000;
+    border: none;
+    border-color:none;
+    color: #ff9100;
+    outline: none;
+    cursor: pointer;
+    margin: 5px;
+    font-weight: bold;
+    right: 150px;
+    font-size: 25px;
+
+  }
+
+  .Button:hover {
+    color: rgb(105, 103, 98);
+    cursor: pointer;
+}
+
+.UploadButton{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background-color: rgba(233, 129, 10, 0.507);
+    border: none;
+    border-color:none;
+    color: rgb(20, 3, 12);
+    outline: none;
+    font: inherit;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 3px;
+}
+.Image {
+   width: 30px;
+   cursor:pointer;
+}
+
+.Upload {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin: 10px;
+}
+
+.label {
+  padding: 5px;
+}
+
+
+@media(max-width: 500px) {
+  .IncomeInputForm {
+    max-width: 80%;
+  }
+  .UploadButton {
+    max-width: 80%;
+  }
+}
+

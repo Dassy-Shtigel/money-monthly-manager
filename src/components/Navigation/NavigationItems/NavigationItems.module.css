@@ -1,0 +1,40 @@
+/* .Tab a:active{
+    background-color:  #8f5c2c;
+    border-bottom: 4px solid transparent;
+    display: block;
+}
+
+
+.Tab {
+    color: rgb(240, 203, 102);
+    font-size: larger;
+    font-weight: bold;
+    border-right: 0.05px solid rgb(233, 129, 10);
+    background-color: rgb(247, 136, 9);
+    height: 80px;
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Tab:hover {
+    background-color: rgb(233, 183, 126);
+    color: rgb(247, 136, 9);
+}
+
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+}
+
+@media (min-width: 500px) {
+    .NavigationItems {
+        flex-flow: row;
+    }
+} */

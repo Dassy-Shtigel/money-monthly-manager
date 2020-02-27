@@ -1,0 +1,135 @@
+.Report {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.ReportList1 {
+    grid-column: 2/2;
+    justify-content: center;
+    align-items: center;
+}
+
+.ReportList2 {
+    grid-column: 3/3;
+}
+
+.ListTitle {
+    padding: 5px;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Total{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.TotalNum{
+    margin-left: 5px;
+    color:  #ff9100;
+    font-weight: bold;
+}
+
+.List {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    grid-gap: 2px;
+    margin-right: 34px;;
+}
+
+.ListItems {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 4fr);
+    grid-template-rows: 30px;
+    text-align: left;
+    grid-gap: 10px 10px;
+    margin: 2px;
+}
+
+.Span {
+    padding: 7px;
+    grid-gap: 2px;
+    background-color: rgba(185, 182, 176, 0.247);
+}
+
+.DownLoad{
+    grid-column: 4/4;
+    display: flex;
+    justify-content: center;
+}
+
+.DownLoadLink{
+    background-color: rgba(204, 204, 204, 0);
+    font-weight: bold;
+    color: #ff9100;
+    outline: none;
+    padding: 10px;
+    font-size: 25px;
+}
+
+@media(max-width: 650px) {
+    .Report {
+        grid-template-rows: 50px auto;
+        grid-gap: 1px;
+        font-size: 15px;
+        align-content: center;
+        justify-content: center;
+    }
+    .DownLoad{
+        grid-row: 1/4;
+        grid-column: 2/4;
+        display: flex;
+        justify-items: center;
+    }
+    .ReportList1 {
+        grid-column: 2/2;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 1px;
+    }
+    
+    .ReportList2 {
+        grid-column: 3/3;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 1px;
+    }
+
+    .List {
+        display: grid;
+        grid-template-columns: repeat(1, 3fr);
+        grid-gap: 1px;
+        margin-top: 0px;
+    }
+
+    .ListTitle{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: large;
+        padding-bottom: 0px;
+    }
+    
+    .ListItems {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 70%);
+        grid-template-rows: 2fr;
+        text-align: left;
+        grid-gap: 1px;
+        margin: 1px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .Span {
+        padding: 7px;
+        grid-gap: 2px;
+        background-color: rgba(185, 182, 176, 0.247);
+    }
+
+}
