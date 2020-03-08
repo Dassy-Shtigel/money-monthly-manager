@@ -1,10 +1,10 @@
-.Popup {
+.popup {
     display: flex;
     flex-flow: row wrap;
     width: 600px; 
 }
 
-.Label {
+.label {
     color: #ff9100;
     flex: 33%;
     font-size: 30px;
@@ -14,17 +14,17 @@
     border-radius: 3px;
 }
 
-.Label:hover {
+.label:hover {
     color: rgb(209, 196, 196);
     cursor:pointer;
 }
 
 
 @media (max-width: 780px) {
-    .Popup {
+    .popup {
         width: 100%;
     }
-    .Label{
+    .label{
         font-size: 20px;
         padding: 5px;
         flex: 50%;

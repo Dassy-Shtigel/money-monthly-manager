@@ -1,5 +1,5 @@
 
-.Month {
+.month {
     background-color: #e0e0e0;
     height: 160px;
     width: 100%;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.Button {
+.button {
     background-color: rgb(105, 103, 98);
     color: rgb(240, 121, 24);
     font-size: 50px;
@@ -27,13 +27,13 @@
     
 }
 
-.Button:hover {
+.button:hover {
     color: rgb(138, 134, 128);
     background-color: rgb(236, 117, 19);
     cursor: pointer;
 }
 
-.Label {
+.label {
     color: rgb(236, 117, 19);
     font-size: 30px;
     background-color: rgb(241, 236, 226);
@@ -46,17 +46,17 @@
     align-self: center;
 }
 
-.Label :hover {
+.label :hover {
     color: wheat;
     background-color: rgb(230, 201, 178);
     cursor: pointer;
 }
 
 @media (max-width: 550px) {
-    .Button{
+    .button{
         font-size: 25px;
     } 
-    .Month{
+    .month{
         height: 110px;
     }
 }

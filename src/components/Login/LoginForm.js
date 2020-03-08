@@ -10,11 +10,11 @@ const LoginForm = (props) => {
 
 
     return (
-        <form className={classes.Login} onSubmit={props.submitHandler}>
-            <section className={classes.LoginForm}>
-                <label className={[classes.Label1, classes.Label].join(' ')}>User Name</label>
+        <form className={classes.login} onSubmit={props.submitHandler}>
+            <section className={classes.loginForm}>
+                <label className={[classes.label1, classes.label].join(' ')}>User Name</label>
                 <input
-                    className={[classes.input1, classes.Input].join(' ')}
+                    className={[classes.input1, classes.input].join(' ')}
                     type="email"
                     required
                     id="email"
@@ -23,9 +23,9 @@ const LoginForm = (props) => {
                         event => {
                             setEnteredEmail(event.target.value);
                         }} />
-                <label className={[classes.Label2, classes.Label].join(' ')}>Password</label>
+                <label className={[classes.label2, classes.label].join(' ')}>Password</label>
                 <input
-                    className={[classes.input2, classes.Input].join(' ')}
+                    className={[classes.input2, classes.input].join(' ')}
                     type="password"
                     required
                     minLength="6"
@@ -35,11 +35,11 @@ const LoginForm = (props) => {
                         event => {
                             setEnteredPassword(event.target.value);
                         }} />
-                <button className={classes.button} type='submit'>{props.button}</button>
+                <button className={classes.button} type='submit'>Login</button>
             </section>
-            <div className={classes.Logo}>
-                <img src={chart} alt="MyImage" className={classes.LogoImage} />
-                <h1 className={classes.LogoTitle}>Monthly Money Menegment</h1>
+            <div className={classes.logo}>
+                <img src={chart} alt="MyImage" className={classes.logoImage} />
+                <h1 className={classes.logoTitle}>Monthly Money Menegment</h1>
             </div>
         </form>
     );

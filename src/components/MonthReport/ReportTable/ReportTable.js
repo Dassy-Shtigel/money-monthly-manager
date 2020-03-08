@@ -6,43 +6,43 @@ const ReportTable = (props) => {
 
 
     return (
-        <div className={classes.Report}>
-            <section className={classes.ReportList1}>
-                <p className={classes.ListTitle}><strong>My Incomes:</strong> </p>
-                <div className={classes.Total}>
+        <div className={classes.report}>
+            <section className={classes.reportList1}>
+                <p className={classes.listTitle}><strong>My Incomes:</strong> </p>
+                <div className={classes.total}>
                     <label><strong>Total:</strong></label>
-                    <p className={classes.TotalNum}>{props.TotalIncomes}</p>
+                    <p className={classes.totalNum}>{props.TotalIncomes}</p>
                 </div>
-                <ul className={classes.List}>
+                <ul className={classes.list}>
                     {props.incomes.map(ig =>
-                        (<li className={classes.ListItems} key={ig.id} >
-                            <span className={classes.Span}><strong>{ig.from}:  </strong></span>
-                            <span className={classes.Span}> {ig.sum}  </span>
+                        (<li className={classes.listItems} key={ig.id} >
+                            <span className={classes.span}><strong>{ig.from}:  </strong></span>
+                            <span className={classes.span}> {ig.sum}  </span>
                         </li>
                         ))}
                 </ul>
             </section>
-            <section className={classes.ReportList2}>
-                <p className={classes.ListTitle}><strong>My Expenses:</strong> </p>
-                <div className={classes.Total}>
+            <section className={classes.reportList2}>
+                <p className={classes.listTitle}><strong>My Expenses:</strong> </p>
+                <div className={classes.total}>
                     <label><strong>Total:</strong></label>
-                    <p className={classes.TotalNum}>{props.TotalExpenses}</p>
+                    <p className={classes.totalNum}>{props.TotalExpenses}</p>
                 </div>
-                <ul className={classes.List}>
+                <ul className={classes.list}>
                     {props.expenses.map(ig => (
-                        <li className={classes.ListItems} key={ig.id} >
-                            <span className={classes.Span}><strong>{ig.from}</strong></span>
-                            <span className={classes.Span}> {ig.sum} </span>
+                        <li className={classes.listItems} key={ig.id} >
+                            <span className={classes.span}><strong>{ig.from}</strong></span>
+                            <span className={classes.span}> {ig.sum} </span>
                         </li>
                     ))}
                 </ul>
             </section>
-            <div className={classes.DownLoad}>
+            <div className={classes.downLoad}>
                 <CSVLink
-                    className={classes.DownLoadLink}
+                    className={classes.downLoadLink}
                     data={props.csvData}
                     enclosingCharacter={`'`}
-                    filename={"MonthReport.csv"}>Export</CSVLink>
+                    filename={props.month + "Report.csv"}>Export</CSVLink>
             </div>
         </div >
     )

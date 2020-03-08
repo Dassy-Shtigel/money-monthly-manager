@@ -7,7 +7,7 @@ const Graph = (props) => {
 
   useEffect(() => {
     if (chartRef.current) {
-      const myChart = new Chart(chartRef.current, {
+      new Chart(chartRef.current, {
         type: "bar",
         data: {
           labels: ["Incomes", "Expenses"],
@@ -40,12 +40,12 @@ const Graph = (props) => {
         }
       });
     }
-  });
+  }, [props.totalIncome, props.totalExpenses, chartRef]);
 
 
   return (
-    <div className={classes.Page}>
-      <div className={classes.Graph}>
+    <div className={classes.page}>
+      <div className={classes.graph}>
         <h1>Incomes-Expenses</h1>
         <canvas ref={chartRef}
         />

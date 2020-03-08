@@ -6,9 +6,9 @@ const modal = (props) => (
 
     <>
         <BackDrop show={props.show} closed={props.modalClosed} />
-        <div className={classes.ModalView}>
+        <div className={classes.modalView}>
             <div
-                className={classes.Modal}
+                className={classes.modal}
                 style={{
                     transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
                     opacity: props.show ? '1' : '0'

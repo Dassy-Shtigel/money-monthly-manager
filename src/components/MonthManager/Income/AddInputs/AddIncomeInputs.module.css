@@ -1,4 +1,4 @@
-.IncomeInputForm {
+.incomeInputForm {
     width: 45%;
     margin: 2rem auto;
     border-radius: 3px;
@@ -24,7 +24,7 @@
   }
 
   
-  .Button {
+  .button {
     justify-content: space-between;
     align-items: center;
     background-color: #ff910000;
@@ -40,12 +40,12 @@
 
   }
 
-  .Button:hover {
+  .button:hover {
     color: rgb(105, 103, 98);
     cursor: pointer;
 }
 
-.UploadButton{
+.uploadButton{
     display: none;
     align-items: center;
     justify-content: center;
@@ -61,12 +61,12 @@
     font-size: 15px;
     border-radius: 3px;
 }
-.Image {
+.image {
    width: 30px;
    cursor:pointer;
 }
 
-.Upload {
+.upload {
   display: flex;
   justify-content: center;
   align-self: center;
@@ -79,10 +79,10 @@
 
 
 @media(max-width: 500px) {
-  .IncomeInputForm {
+  .incomeInputForm {
     max-width: 80%;
   }
-  .UploadButton {
+  .uploadButton {
     max-width: 80%;
   }
 }

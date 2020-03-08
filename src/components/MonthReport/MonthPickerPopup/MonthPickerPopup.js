@@ -10,9 +10,9 @@ const MonthPickerPopup = (props) => {
 
     return (
         <div >
-            <section className={classes.Popup}>
+            <section className={classes.popup}>
                 {monthsList.map((month, index) =>
-                    <label className={classes.Label} onClick={
+                    <label className={classes.label} onClick={
                         props.clicked} key={index} >{month}</label>
                 )}
             </section>

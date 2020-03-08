@@ -1,5 +1,5 @@
 
-.Header {
+.header {
     position: fixed;
     top: 0;
     background-color: rgba(128, 120, 112, 0.842);
@@ -10,7 +10,7 @@
     justify-content: column;   
 }
 
-.Title {
+.title {
     color: #ff9100;
     height: 90px;
     font-size: 38px;
@@ -20,13 +20,13 @@
     margin-left: 10px;
 }
 
-.Image {
+.image {
     height: 70%;
     flex: 0.3;
     margin-left: 15px;
 }
 
-.Tab {
+.tab {
     font-size: larger;
     font-weight: bold;
     border-right: 0.02px solid rgb(146, 139, 133);
@@ -41,15 +41,15 @@
     text-align: center;
 }
 
-.Tab a{
+.tab a{
     text-decoration: none;
     color: rgb(66, 65, 63);
     cursor: pointer;
 }
 
-.Tab a:hover,
-.Tab a:active,
-.Tab a.active{
+.tab a:hover,
+.tab a:active,
+.tab a.active{
     background-color: rgba(175, 161, 147, 0.952);
     height: 100%;
     width: 100%;
@@ -60,31 +60,63 @@
     color: rgb(66, 65, 63);
 }
 
-.Content{
+
+.content{
     margin-top: 80px; 
     text-align: center;
+}
+
+ .logoutText{
+    color: rgb(66, 65, 63);
+ }
+ 
+ .logoutText:hover {
+    background-color: rgba(175, 161, 147, 0.952);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid #ff9100;
+    color: rgb(66, 65, 63);
+ }
+
+ .logout{
+    height: 50%;
+    flex: 0.3;
+    margin-left: 15px;  
  }
 
  @media(max-width: 1085px) {
-    .Title{
+    .title{
         font-size: 30px;
         flex: 3;
     }
+    .logout{
+        height:25%;
+        flex: 0.3;
+        margin-left: 5px;  
+     }
  }
 
  @media (max-width: 650px) {
-    .Header{
+    .header{
         width: 100%;
     }
     
-    .Title{
+    .title{
         display: none;
     }
-    .Image {
+    .image {
         display: none;
     }
 
-    .Tab{
+    .tab{
         font-size: unset;
     }
+    .logout{
+        height:25%;
+        flex: 0.3;
+        margin-left: 5px;  
+     }
 }

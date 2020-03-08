@@ -23,6 +23,10 @@ const MonthManagerBuilder = () => {
     const [isIncomeListOpen, setIsIncomeListOpen] = useState(false);
     const [isExpensesListOpen, setIsExpensesListOpen] = useState(false);
     const [errorState, setErrorState] = useState(false);
+    const [showIncomesButtons, setShowIncomesButtons] = useState(false);
+    const [showExpensiveButtons, setShowExpensiveButtons] = useState(false);
+    const [editMode, setEditMode] = useState("false");
+    const [showSaveIcon, setShowSaveIcon] = useState(false);
 
 
     useEffect(() => {
@@ -33,17 +37,14 @@ const MonthManagerBuilder = () => {
                 for (const key in responseData) {
                     loadedIncomes.push({
                         id: key,
-                        from: responseData[key].income.from,
-                        sum: responseData[key].income.sum
+                        from: responseData[key].from,
+                        sum: responseData[key].sum
                     });
                 }
                 setIncomeInputs(loadedIncomes.reverse());
             }).catch(error => {
                 setErrorState({ error: true });
             });
-    }, [currentMonth]);
-
-    useEffect(() => {
         fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Expenses.json`)
             .then(response => response.json())
             .then(responseData => {
@@ -51,8 +52,8 @@ const MonthManagerBuilder = () => {
                 for (const key in responseData) {
                     loadedExpenses.push({
                         id: key,
-                        from: responseData[key].expenses.from,
-                        sum: responseData[key].expenses.sum
+                        from: responseData[key].from,
+                        sum: responseData[key].sum
                     });
                 }
                 setExpensesInputs(loadedExpenses.reverse());
@@ -110,13 +111,13 @@ const MonthManagerBuilder = () => {
     const addIncomeInputsHandler = income => {
         fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Incomes.json`, {
             method: 'POST',
-            body: JSON.stringify({ income }),
+            body: JSON.stringify({ from: income.from, sum: income.sum }),
             headers: { 'Content-Type': 'application/json' }
         }).then(response => {
             return response.json();
         }).then(responseData => {
             setIncomeInputs(prevIncomes => [
-                { id: responseData.name, ...income },
+                { id: responseData.name, from: income.from, sum: income.sum },
                 ...prevIncomes
             ]);
         })
@@ -125,13 +126,13 @@ const MonthManagerBuilder = () => {
     const addExpensesInputHandler = (expenses) => {
         fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Expenses.json`, {
             method: 'POST',
-            body: JSON.stringify({ expenses }),
+            body: JSON.stringify({ from: expenses.from, sum: expenses.sum }),
             headers: { 'Content-Type': 'application/json' }
         }).then(response => {
             return response.json();
         }).then(responseData => {
             setExpensesInputs(prevExpenses => [
-                { id: responseData.name, ...expenses },
+                { id: responseData.name, from: expenses.from, sum: expenses.sum },
                 ...prevExpenses
             ]);
         })
@@ -143,7 +144,6 @@ const MonthManagerBuilder = () => {
         } else if (Balance < -1) {
             setBalanceColor(false)
         }
-
     }, [Balance])
 
     const RemoveMonthPopupHandler = () => {
@@ -162,7 +162,7 @@ const MonthManagerBuilder = () => {
     }
 
 
-    const clickIncomeMoreLess = () => {
+    const clickIncomeMoreLessButton = () => {
         setIsIncomeListOpen(!isIncomeListOpen)
     }
 
@@ -174,7 +174,7 @@ const MonthManagerBuilder = () => {
         }
     }
 
-    const clickExpensesMoreLess = () => {
+    const clickExpensesMoreLessButton = () => {
         setIsExpensesListOpen(!isExpensesListOpen)
     }
 
@@ -186,7 +186,132 @@ const MonthManagerBuilder = () => {
         }
     }
 
-    let error = errorState ? <p className={classes.Error}>No Connection:(</p> : null;
+    let error = errorState ? <p className={classes.error}>No Connection:(</p> : null;
+
+    const incomeListItemHovered = (id) => {
+        setShowIncomesButtons(id);
+    }
+
+    const incomeListItemUnHovered = () => {
+        setShowIncomesButtons(false);
+    }
+
+    const expensiveListItemHovered = () => {
+        setShowExpensiveButtons(true);
+    }
+
+    const expensiveListItemUnHovered = () => {
+        setShowExpensiveButtons(false);
+    }
+
+    const removeIncomeItemHandler = itemId => {
+        fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Incomes/${itemId}.json`,
+            {
+                method: 'DELETE'
+
+            }).then(response => {
+                setIncomeInputs(prevIncomes =>
+                    prevIncomes.filter(incomes => incomes.id !== itemId)
+                );
+            })
+    }
+
+    const removeExpensesItemHandler = itemId => {
+        fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Expenses/${itemId}.json`,
+            {
+                method: 'DELETE'
+            }).then(response => {
+                setExpensesInputs(prevIncomes =>
+                    prevIncomes.filter(expenses => expenses.id !== itemId)
+                );
+            })
+    }
+
+    const editIncomesModeYesNo = itemId => {
+        incomeInputs.forEach(incomes => {
+            if (incomes.id !== itemId) {
+                if (editMode === "false") {
+                    setEditMode("true");
+                    setShowSaveIcon(true);
+                }
+                if (editMode === "true") {
+                    setEditMode("false");
+                    setShowSaveIcon(false);
+                }
+            }
+        });
+    }
+
+    const editExpensesModeYesNo = itemId => {
+        expensesInputs.forEach(expenses => {
+            if (expenses.id !== itemId) {
+                if (editMode === "false") {
+                    setEditMode("true");
+                    setShowSaveIcon(true);
+                }
+                if (editMode === "true") {
+                    setEditMode("false");
+                    setShowSaveIcon(false);
+                }
+            }
+        });
+    }
+
+    const changeIncomeValue = (newObject) => {
+        incomeInputs.map(item => {
+            return item.id === newObject.id ? newObject : item
+        })
+        console.log(JSON.stringify({ from: newObject.from, sum: newObject.sum }))
+        fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Incomes/${newObject.id}.json`, {
+            method: 'PUT',
+            body: JSON.stringify({ from: newObject.from, sum: newObject.sum }),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(response => {
+            return response.json();
+        }).then(responseData => {
+            fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Incomes.json`)
+                .then(response => response.json())
+                .then(responseData => {
+                    const loadedIncomes = [];
+                    for (const key in responseData) {
+                        loadedIncomes.push({
+                            id: key,
+                            from: responseData[key].from,
+                            sum: responseData[key].sum
+                        });
+                    }
+                    setIncomeInputs(loadedIncomes.reverse());
+                })
+        });
+    }
+
+    const changeExpensesValue = (newObject) => {
+        expensesInputs.map(item => {
+            return item.id === newObject.id ? newObject : item
+        })
+        console.log(JSON.stringify({ from: newObject.from, sum: newObject.sum }))
+        fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Expenses/${newObject.id}.json`, {
+            method: 'PUT',
+            body: JSON.stringify({ from: newObject.from, sum: newObject.sum }),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(response => {
+            return response.json();
+        }).then(responseData => {
+            fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/Expenses.json`)
+                .then(response => response.json())
+                .then(responseData => {
+                    const loadedExpenses = [];
+                    for (const key in responseData) {
+                        loadedExpenses.push({
+                            id: key,
+                            from: responseData[key].from,
+                            sum: responseData[key].sum
+                        });
+                    }
+                    setExpensesInputs(loadedExpenses.reverse());
+                })
+        });
+    }
 
 
     return (
@@ -196,28 +321,45 @@ const MonthManagerBuilder = () => {
                     clicked={MonthClickedHandler} />
             </Modal>
             <MonthPicker clicked={MonthPickerClicked}>{currentMonth}</MonthPicker>
-            <div className={classes.Balance}>
-                <p className={classes.BalanceText} >Current Balance: </p>
+            <div className={classes.balance}>
+                <p className={classes.balanceText} >Current Balance: </p>
                 <p
-                    className={classes.BalanceText}
+                    className={classes.balanceText}
                     style={{
                         //color: balancecolor ? 'rgb(82, 170, 60, 0.5)' : 'rgb(239, 105, 82)'
                         color: balancecolor ? '#ff9100' : '#ff9100'
                     }}> {Balance}</p>
             </div>
-            <section className={classes.Section}>
+            <section className={classes.section}>
                 <Income
                     onAddInput={addIncomeInputsHandler}
                     incomes={getRenderedIncomes}
                     incomeSum={ToralIncome}
                     isOpen={isIncomeListOpen}
-                    clicked={clickIncomeMoreLess} />
+                    clicked={clickIncomeMoreLessButton}
+                    hover={incomeListItemHovered}
+                    unHover={incomeListItemUnHovered}
+                    show={showIncomesButtons}
+                    onRemoveItem={removeIncomeItemHandler}
+                    onEditItem={editIncomesModeYesNo}
+                    edit={editMode}
+                    showSave={showSaveIcon}
+                    onEditInput={changeIncomeValue}
+                />
                 <ExpensesList
                     onAddInput={addExpensesInputHandler}
                     expenses={getRenderedExpenses}
                     expensesSum={ToralExpenses}
                     isOpen={isExpensesListOpen}
-                    clicked={clickExpensesMoreLess} />
+                    clicked={clickExpensesMoreLessButton}
+                    hover={expensiveListItemHovered}
+                    unHover={expensiveListItemUnHovered}
+                    show={showExpensiveButtons}
+                    onRemoveItem={removeExpensesItemHandler}
+                    onEditItem={editExpensesModeYesNo}
+                    edit={editMode}
+                    showSave={showSaveIcon}
+                    onEditInput={changeExpensesValue} />
             </section>
             {error}
         </div >

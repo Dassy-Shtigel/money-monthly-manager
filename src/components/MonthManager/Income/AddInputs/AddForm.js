@@ -20,7 +20,7 @@ const AddIncomeInputs = React.memo(props => {
 
     return (
         <section  >
-            <form className={classes.IncomeInputForm} onSubmit={SubmitHandler}>
+            <form className={classes.incomeInputForm} onSubmit={SubmitHandler}>
                 <div >
                     <input
                         className={classes.input}
@@ -46,13 +46,13 @@ const AddIncomeInputs = React.memo(props => {
                     <input
                         type="file"
                         id="avatar"
-                        className={classes.UploadButton}
+                        className={classes.uploadButton}
                         onChange={event => {
                             setEnteredImage(event.target.value);
                         }} />
                 </div>
                 <div >
-                    <button type='submit' className={classes.Button}>Add</button>
+                    <button type='submit' className={classes.button}>Add</button>
                 </div>
             </form>
         </section>)

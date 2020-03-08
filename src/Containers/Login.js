@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import LoginForm from '../components/Login/LoginForm';
+import { AuthContext } from '../contex/auth-contex';
+import { Route } from 'react-router-dom';
+import MonthManagerBuilder from '../Containers/MonthManagerBuilder'
 
 const Login = (props) => {
-
-    const [buttonText, setButtonText] = useState('Login');
+    const authContext = useContext(AuthContext);
 
     const LoginHandler = () => {
-        setButtonText('Authonticated');
+        authContext.login();
     }
 
     return (
         <div>
-            <LoginForm submitHandler={LoginHandler} button={buttonText} />
+            <LoginForm submitHandler={LoginHandler}/>
         </div>
     );
 }

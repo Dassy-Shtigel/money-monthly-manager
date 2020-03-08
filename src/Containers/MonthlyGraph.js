@@ -18,15 +18,13 @@ const MonthlyGraph = (props) => {
         fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/TotalIncomes.json`)
             .then(response => response.json())
             .then(responseData => {
-                setTotalIncome(responseData.incomeTotalSum);
+                setTotalIncome(responseData.incomeTotalSum)
             });
-    }, [currentMonth])
-
-    useEffect(() => {
         fetch(`https://my-cool-project-1d8d4.firebaseio.com/${currentMonth}/TotalExpenses.json`)
             .then(response => response.json())
             .then(responseData => {
                 setTotalExpenses(responseData.expensesTotalSum);
+
             });
     }, [currentMonth])
 

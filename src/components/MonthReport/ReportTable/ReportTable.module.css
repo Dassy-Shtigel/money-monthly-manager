@@ -1,47 +1,47 @@
-.Report {
+.report {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 }
 
-.ReportList1 {
+.reportList1 {
     grid-column: 2/2;
     justify-content: center;
     align-items: center;
 }
 
-.ReportList2 {
+.reportList2 {
     grid-column: 3/3;
 }
 
-.ListTitle {
+.listTitle {
     padding: 5px;
     margin-bottom: 0px;
     justify-content: center;
     align-items: center;
 }
 
-.Total{
+.total{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.TotalNum{
+.totalNum{
     margin-left: 5px;
     color:  #ff9100;
     font-weight: bold;
 }
 
-.List {
+.list {
     display: grid;
     grid-template-columns: repeat(1, 2fr);
     grid-gap: 2px;
     margin-right: 34px;;
 }
 
-.ListItems {
+.listItems {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, 4fr);
@@ -51,19 +51,19 @@
     margin: 2px;
 }
 
-.Span {
+.span {
     padding: 7px;
     grid-gap: 2px;
     background-color: rgba(185, 182, 176, 0.247);
 }
 
-.DownLoad{
+.downLoad{
     grid-column: 4/4;
     display: flex;
     justify-content: center;
 }
 
-.DownLoadLink{
+.downLoadLink{
     background-color: rgba(204, 204, 204, 0);
     font-weight: bold;
     color: #ff9100;
@@ -73,48 +73,48 @@
 }
 
 @media(max-width: 650px) {
-    .Report {
+    .report {
         grid-template-rows: 50px auto;
         grid-gap: 1px;
         font-size: 15px;
         align-content: center;
         justify-content: center;
     }
-    .DownLoad{
+    .downLoad{
         grid-row: 1/4;
         grid-column: 2/4;
         display: flex;
         justify-items: center;
     }
-    .ReportList1 {
+    .reportList1 {
         grid-column: 2/2;
         justify-content: center;
         align-items: center;
         grid-gap: 1px;
     }
     
-    .ReportList2 {
+    .reportList2 {
         grid-column: 3/3;
         justify-content: center;
         align-items: center;
         grid-gap: 1px;
     }
 
-    .List {
+    .list {
         display: grid;
         grid-template-columns: repeat(1, 3fr);
         grid-gap: 1px;
         margin-top: 0px;
     }
 
-    .ListTitle{
+    .listTitle{
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: large;
         padding-bottom: 0px;
     }
     
-    .ListItems {
+    .listItems {
         list-style: none;
         display: grid;
         grid-template-columns: repeat(2, 70%);
@@ -126,7 +126,7 @@
         align-items: center;
     }
     
-    .Span {
+    .span {
         padding: 7px;
         grid-gap: 2px;
         background-color: rgba(185, 182, 176, 0.247);

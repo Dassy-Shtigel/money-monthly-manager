@@ -1,11 +1,11 @@
-.Login {
+.login {
     display: flex;
     flex-direction: column;
     align-items: center; 
-    background-color: rgba(245, 242, 238, 0.514);
+    /* background-color: rgba(245, 242, 238, 0.514); */
 }
 
-.LoginForm {
+.loginForm {
     border: 1px solid black;
     display: grid;
     grid-template-columns: 1.5fr 5fr 1.5fr;
@@ -19,23 +19,23 @@
     box-shadow: 1px 5px 10px rgba(204, 197, 197, 0.664);
 }
 
-.Label {
+.label {
     font-size: 110%;
     font-weight: bold;
 }
 
-.Label1{
+.label1{
     grid-row: 1/1;
     grid-column: 2/2;
     margin-top: 10%;
 }
 
-.Label2{
+.label2{
     grid-row: 3/3;
     grid-column: 2/2;
 }
 
-.Input{
+.input{
     align-items: stretch;
     justify-content: space-between;
     display: block;
@@ -84,7 +84,7 @@
     cursor: pointer;
 }
 
-.Logo{
+.logo{
     position: fixed;
     top: 65%;
     bottom: 0;
@@ -92,13 +92,13 @@
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
-    margin-top: 4%;
+    margin-top: 2%;
     background-color: rgba(51, 46, 42, 0.137);
     width: 100%;
     height: 30%;
 }
 
-.LogoImage{
+.logoImage{
     width: 10%;
     height: 55%;
     background-color: #ff9100;
@@ -108,7 +108,7 @@
     margin-top: 2.5%;
 }
 
-.LogoTitle{
+.logoTitle{
     font-size: 600%;
     margin: 1.5%;
     margin-bottom: 3.5%;
@@ -118,42 +118,47 @@
 
 @media(max-width: 1470px) {
 
-    .Logo{
+    .logo{
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .LogoImage{
+    .logoImage{
         width: 100px;
         height: 100px;
         margin-top: 5%;
         margin-left: 5%;
     }
 
-    .LogoTitle{
+    .logoTitle{
         font-size: 400%;
     }
 
 }
+@media(max-width: 865px) {
+    .logoTitle{
+        font-size: 300%;
+    }
+}
 
 @media(max-width: 650px) {
 
-    .LoginForm {
+    .loginForm {
         grid-template-columns: 0.5fr 1fr 0.5fr;
         grid-template-rows: 0.05fr 0.5fr 0.05fr 0.5fr 0.7fr;
         margin-top: 30%;
         width: 80%;
     }
 
-    .Label {
+    .label {
         font-size: 18px;
     }
     
-    .Label1{
+    .label1{
         margin-top: 10%;
     }
     
-    .Input{
+    .input{
         width:90%;
         height: 60%;
         font-size: 20px;
@@ -169,7 +174,7 @@
         font-size: 110%;
     }
 
-    .Logo{
+    .logo{
         position: fixed;
         top: 60%;
         bottom: 0;
@@ -183,14 +188,14 @@
         height:200px;
     }
 
-    .LogoImage{
+    .logoImage{
         width: 50px;
         height: 50px;
         border: 5px solid #ff9100;
         margin: 0px;
     }
 
-    .LogoTitle{
+    .logoTitle{
         font-size: 200%;
         margin: 1%;
         margin-bottom: 10px;
